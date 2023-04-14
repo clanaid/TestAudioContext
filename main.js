@@ -145,7 +145,14 @@ const zzfxG = (
 const music = zzfxG(...[, , 333, 0.01, 0, 0.9, 4, 1.9, , , , , , 0.5, , 0.6]);
 window.play = function () {
   playSamples(1, 1, 0, 0, music);
+  print("第一次播放");
   setTimeout(() => {
     playSamples(1, 1, 0, 0, music);
+    print("第二次播放");
   }, 2000);
 };
+
+function print(msg) {
+  const d = document.getElementById("log");
+  d.innerText += msg + "\n";
+}
